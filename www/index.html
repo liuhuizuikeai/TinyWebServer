@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyWebServer - 高性能C++ HTTP服务器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎使用 <span class="server-name">TinyWebServer</span></h1>
+        <p>一个基于 C++14 + epoll + 线程池的高性能 HTTP 服务器</p>
+
+        <div class="time" id="current-time">
+            加载中...
+        </div>
+
+        <ul class="features">
+            <li>✅ 基于 Linux epoll 的 Reactor 模型（ET + 非阻塞 I/O）</li>
+            <li>✅ 多线程线程池处理请求</li>
+            <li>✅ 完整 HTTP/1.1 协议解析</li>
+            <li>✅ 静态文件服务（HTML/CSS/JS/PNG/JPG）</li>
+            <li>✅ 防路径遍历攻击（安全校验）</li>
+        </ul>
+
+        <footer>
+            &copy; 2026 TinyWebServer Project | 用于 Linux C++ 服务器开发学习
+        </footer>
+    </div>
+
+    <script>
+        // 动态显示当前时间，验证 JS 能正常加载和执行
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = 
+                '当前时间: ' + now.toLocaleString('zh-CN');
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
